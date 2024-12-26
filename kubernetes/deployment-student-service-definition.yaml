@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: student-deployment
+  labels:
+    type: student-services
+    end: backend
+spec:
+  template:
+    metadata:
+      name: student-pod
+      labels:
+        type: student-services
+        end: backend
+    spec:
+      containers:
+      - name: student
+        image: localhost:5000/student
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DATABASE_URL
+          value: "10.102.57.20"
+        - name: DATABASE_PORT
+          value:  "5000"
+        - name: USERNAME
+          value: "postgres"
+        - name: PASSWORD
+          value: "test"
+        - name: SERVICE_PORT
+          value: "8080"
+  replicas: 3
+  selector:
+    matchLabels:
+      type: student-services

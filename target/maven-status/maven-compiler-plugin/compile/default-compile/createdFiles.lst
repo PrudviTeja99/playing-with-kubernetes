@@ -1,0 +1,5 @@
+com/teja/StudentService/entity/Student.class
+com/teja/StudentService/StudentServiceApplication.class
+com/teja/StudentService/controller/StudentController.class
+com/teja/StudentService/repository/StudentRepository.class
+com/teja/StudentService/model/Student.class

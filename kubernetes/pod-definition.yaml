@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: student-pod
+  labels:
+    type: student-services
+    end: backend
+spec:
+  containers:
+  - name: student
+    image: localhost:5000/student
+    imagePullPolicy: IfNotPresent
+

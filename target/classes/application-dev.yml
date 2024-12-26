@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: StudentService
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: "jdbc:postgresql://10.102.57.20:5000/school"
+    username: postgres
+    password: test
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQL95Diaclect
+
+server:
+  port: 8080
